@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "llm-price-tracker"
-version = "2026.06.121349"
+version = "2026.06.121355"
 description = "Fetch, normalise, snapshot, and diff official LLM API token pricing."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -44,7 +44,7 @@ dev = [
 llm-price-tracker = "llm_price_tracker.cli:main"
 
 [project.urls]
-Homepage = "https://pypi.org/project/llm-price-tracker/"
+Homepage = "https://github.com/chigwell/llm-price-tracker"
 Repository = "https://github.com/chigwell/llm-price-tracker"
 Issues = "https://github.com/chigwell/llm-price-tracker/issues"
 
