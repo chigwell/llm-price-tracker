@@ -1,0 +1,66 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-price-tracker"
+version = "2026.06.121349"
+description = "Fetch, normalise, snapshot, and diff official LLM API token pricing."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Eugene Evstafev", email = "hi@eugene.plus" }
+]
+keywords = ["llm", "pricing", "ai", "openai", "anthropic"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "httpx>=0.27",
+  "lxml>=5.0",
+  "pydantic>=2.7",
+  "rich>=13.7",
+  "typer>=0.12",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black>=24.0",
+  "pytest>=8.0",
+  "ruff>=0.6",
+]
+
+[project.scripts]
+llm-price-tracker = "llm_price_tracker.cli:main"
+
+[project.urls]
+Homepage = "https://pypi.org/project/llm-price-tracker/"
+Repository = "https://github.com/chigwell/llm-price-tracker"
+Issues = "https://github.com/chigwell/llm-price-tracker/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/llm_price_tracker"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
